@@ -81,6 +81,7 @@ mpl_packages = [
     setupext.Delaunay(),
     setupext.QhullWrap(),
     setupext.Tri(),
+    setupext.Cplusplus(),
     'Optional subpackages',
     setupext.SampleData(),
     setupext.Toolkits(),

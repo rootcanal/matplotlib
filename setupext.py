@@ -2058,6 +2058,18 @@ class BackendCairo(OptionalBackendPackage):
             return "cairocffi version %s" % cairocffi.version
 
 
+class Cplusplus(SetupPackage):
+    name = "c++"
+
+    def check(self):
+        try:
+            output = check_output('c++ --version', shell=True
+                                  , stderr=subprocess.STDOUT)
+            return "version %s" % output.splitlines()[1].decode().split()[-1]
+        except subprocess.CalledProcessError:
+            raise CheckFailed()
+
+
 class DviPng(SetupPackage):
     name = "dvipng"
     optional = True
